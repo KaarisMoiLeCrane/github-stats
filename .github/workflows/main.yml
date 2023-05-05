@@ -40,7 +40,7 @@ jobs:
       run: |
         git fetch
         git checkout main
-        git merge -X theirs origin/main
+        git merge origin/main
     # Commit all changed files to the repository
     - name: Commit to the repo
       run: |
@@ -50,5 +50,5 @@ jobs:
         # Force the build to succeed, even if no files were changed
         git commit -m 'Update generated files' || true
         git fetch
-        git merge -X theirs origin/main
+        git merge origin/main
         git push -f
